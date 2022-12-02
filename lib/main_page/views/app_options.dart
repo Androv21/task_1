@@ -34,7 +34,7 @@ class AppOptions extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 354,
       child: ListView.builder(
         physics: const NeverScrollableScrollPhysics(),
