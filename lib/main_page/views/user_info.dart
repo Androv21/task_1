@@ -14,7 +14,6 @@ class UserInfo extends StatelessWidget {
     StatisticModel(39, 'Coupons'),
   ];
 
-
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -31,9 +30,9 @@ class UserInfo extends StatelessWidget {
           color: Colors.blue,
           boxShadow: <BoxShadow>[
             BoxShadow(
-                color: Colors.black54,
-                blurRadius: 8.0,
-                offset: Offset(2, 5)
+              color: Colors.black54,
+              blurRadius: 8.0,
+              offset: Offset(2, 5),
             )
           ],
         ),
@@ -129,7 +128,8 @@ class UserInfo extends StatelessWidget {
       ),
     );
   }
-  Widget _buildUserStatistics(){
+
+  Widget _buildUserStatistics() {
     return ListView.builder(
       physics: const NeverScrollableScrollPhysics(),
       scrollDirection: Axis.horizontal,
@@ -163,5 +163,4 @@ class UserInfo extends StatelessWidget {
       },
     );
   }
-
 }

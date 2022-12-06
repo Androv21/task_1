@@ -15,7 +15,7 @@ class AppFunctions extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 116,
       child: _buildAppFunctions(),
     );
@@ -23,38 +23,39 @@ class AppFunctions extends StatelessWidget {
 
   Widget _buildAppFunctions() {
     return ListView.builder(
-        physics: const NeverScrollableScrollPhysics(),
-        scrollDirection: Axis.horizontal,
-        itemCount: functions.length,
-        itemBuilder: (BuildContext context, int index) {
-          return Padding(
-            padding: const EdgeInsets.all(24),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Container(
-                  padding: const EdgeInsets.all(12),
-                  decoration: const BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: AppColors.shapeFunctions,
-                  ),
-                  child: Icon(
-                    functions[index].icon,
-                    color: AppColors.iconFunctions,
-                  ),
+      physics: const NeverScrollableScrollPhysics(),
+      scrollDirection: Axis.horizontal,
+      itemCount: functions.length,
+      itemBuilder: (BuildContext context, int index) {
+        return Padding(
+          padding: const EdgeInsets.all(24),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Container(
+                padding: const EdgeInsets.all(12),
+                decoration: const BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: AppColors.shapeFunctions,
                 ),
-                const SizedBox(
-                  height: 4,
+                child: Icon(
+                  functions[index].icon,
+                  color: AppColors.iconFunctions,
                 ),
-                Text(
-                  functions[index].name,
-                  style: const TextStyle(
-                    color: AppColors.nameFunctions,
-                  ),
+              ),
+              const SizedBox(
+                height: 4,
+              ),
+              Text(
+                functions[index].name,
+                style: const TextStyle(
+                  color: AppColors.nameFunctions,
                 ),
-              ],
-            ),
-          );
-        });
+              ),
+            ],
+          ),
+        );
+      },
+    );
   }
 }
